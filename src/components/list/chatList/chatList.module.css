@@ -41,7 +41,7 @@
         }
 
     }
-    
+   
     .item{
         display: flex;
         align-items: center;
@@ -71,7 +71,7 @@
             }
         }
     }
-    /* .item::-webkit-scrollbar{
-        display: none; */
-    
 } 
+.chatList::-webkit-scrollbar { 
+    display: none;  /* hide scrollbar */
+}
