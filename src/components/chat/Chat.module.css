@@ -3,8 +3,6 @@
     border-left: 1px solid #dddddd35;
     border-right: 1px solid #dddddd35;
     height: 100%;
-    display: flex;
-    flex-direction: column;
 
     .top{
         padding: 20px;
@@ -52,32 +50,7 @@
         }
         
     }
-    
     .center{
-        padding: 20px;
-        flex: 1;
-        overflow: scroll;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        .inbox{
-            display: flex;
-            align-self: flex-end;
-            color: tomato;
-        }
-
-        /* .message{
-            max-width: 70%;
-            display: flex;
-            gap: 20px;
-
-            .texts{
-                p{
-                    background-color: #5183fe;
-                }
-            }
-        } */
 
     }
     .bottom{
@@ -87,7 +60,6 @@
         justify-content: space-between;
         border-top: 1px solid #dddddd35;
         gap: 20px;
-        margin-top: auto;
 
         .icons{
             display: flex;
@@ -107,15 +79,6 @@
             padding: 20px;
             border-radius: 10px;
             font-size: 16px;
-        }
-        .emoji {
-            position: relative;
-
-            .picker {
-                position: absolute;
-                bottom: 50px;
-                left: 0;
-            }
         }
         .sendButton{
             padding: 10px 20px;
