@@ -61,23 +61,50 @@
         flex-direction: column;
         gap: 20px;
 
-        .inbox{
-            display: flex;
-            align-self: flex-end;
-            color: tomato;
-        }
-
-        /* .message{
+        .message{
             max-width: 70%;
             display: flex;
             gap: 20px;
 
-            .texts{
-                p{
-                    background-color: #5183fe;
+            &.own {
+                align-self: flex-end;
+            
+                .texts{
+                    p{
+                        background-color: #5183fe;
+                    }
                 }
             }
-        } */
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            .texts{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                img{
+                    width: 100%;
+                    height: 200px;
+                    border-radius: 10px;
+                    object-fit: cover;
+                }
+
+                p{
+                    padding: 20px;
+                    background-color: rgba(17, 25, 40, 0.3);
+                    border-radius: 10px;
+                }
+                span{
+                    font-size: 13px;
+                }
+            }
+            
+        }
 
     }
     .bottom{
@@ -126,4 +153,8 @@
             border: none;
         }
     }
+}
+
+.center::-webkit-scrollbar { 
+    display: none;  /* hide scrollbar */
 }
