@@ -1,4 +1,5 @@
-import React from 'react'
+import EmojiPicker from 'emoji-picker-react';
+
 import styles from './Chat.module.css';
 
 const Chat = () => {
@@ -27,7 +28,12 @@ const Chat = () => {
         </div>
         <input type="text" placeholder='Type a message' />
         <div className={styles.emoji}>
-          <img src="./emoji.png" alt="" />
+          <img 
+          src="./emoji.png" 
+          alt="" 
+          onClick={() => setOpen((prev) => !prev)}
+          />
+          <EmojiPicker open={open} onEmojiClick={handleEmoji}/>
         </div>
         <button className={styles.sendButton}>Send</button>
       </div>
