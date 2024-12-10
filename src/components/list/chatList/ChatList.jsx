@@ -16,7 +16,35 @@ const ChatList = () => {
       </div>
 
       <div className={styles.item}>
-        <img src="./avatar.png" alt="" className={styles.display}/>
+        <img src="./avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Massika Joe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="./avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Massika Joe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="./avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Massika Joe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="./avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Massika Joe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="./avatar.png" alt="" />
         <div className={styles.texts}>
           <span>Massika Joe</span>
           <p>Hello</p>
@@ -37,7 +65,7 @@ const ChatList = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ChatList;
