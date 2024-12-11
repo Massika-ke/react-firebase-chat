@@ -60,25 +60,6 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
-
-        .inbox{
-            display: flex;
-            align-self: flex-end;
-            color: tomato;
-        }
-
-        /* .message{
-            max-width: 70%;
-            display: flex;
-            gap: 20px;
-
-            .texts{
-                p{
-                    background-color: #5183fe;
-                }
-            }
-        } */
-
     }
     .bottom{
         display: flex;
