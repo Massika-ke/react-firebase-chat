@@ -9,10 +9,12 @@ import Chat from "./components/chat/Chat"
 import Detail from "./components/detail/Detail"
 import List from "./components/list/List"
 import Login from "./login/Login";
+import { useChatStore } from "./lib/chatStore";
 
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();
+  const { chatId } = useChatStore();
 
   useEffect(()=> {
     const unSub = onAuthStateChanged(auth, (user) => {
@@ -31,8 +33,8 @@ const App = () => {
       { currentUser? 
         ( <>
           <List />
-          <Chat />
-          <Detail />
+          {chatId && <Chat />}
+          {chatId && <Detail />}
           </>): 
         (<Login />)
       }

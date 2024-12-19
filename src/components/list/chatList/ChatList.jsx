@@ -1,16 +1,21 @@
 import { useEffect, useState } from 'react'
-
-import styles from './chatList.module.css'
 import AddUser from './addUser/AddUser';
 import {useUserStore} from '../../../lib/userStore'
 import { doc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from '../../../lib/firebase';
+import { useChatStore } from '../../../lib/chatStore';
+
+import styles from './chatList.module.css'
+
+
 
 const ChatList = () => {
   const [chats, setChats] = useState([]);
   const [addMode, setAddMode] = useState(false);
+  
 
   const { currentUser } = useUserStore();
+  const {changeChat} = useChatStore()
 
   useEffect(()=>{
     const unSub = onSnapshot(doc(db, "userchats", currentUser.id), async (res) => {
@@ -34,6 +39,8 @@ const ChatList = () => {
       unSub()
     }
   }, [currentUser.id]);
+
+  
   
   return (
     <div className={styles.chatList}>
@@ -46,7 +53,7 @@ const ChatList = () => {
         onClick={()=> setAddMode((prev)=>!prev)}/>
       </div>
       {chats.map((chat) => (
-        <div className={styles.item} key={chat.chatId}>
+        <div className={styles.item} key={chat.chatId} onClick={ ()=> handleSelect(chat)}>
         <img src={chat.user.avatar || "./avatar.png"} alt="" />
         <div className={styles.texts}>
           <span>{chat.user.username}</span>
