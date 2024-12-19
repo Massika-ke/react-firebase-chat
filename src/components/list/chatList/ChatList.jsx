@@ -15,7 +15,7 @@ const ChatList = () => {
   
 
   const { currentUser } = useUserStore();
-  const {changeChat} = useChatStore()
+  const { chatId, changeChat} = useChatStore()
 
   useEffect(()=>{
     const unSub = onSnapshot(doc(db, "userchats", currentUser.id), async (res) => {
@@ -40,7 +40,9 @@ const ChatList = () => {
     }
   }, [currentUser.id]);
 
-  
+  const handleSelect = async (chat) =>{
+    changeChat(chat.chatId, chat.user)
+  };
   
   return (
     <div className={styles.chatList}>
@@ -53,7 +55,7 @@ const ChatList = () => {
         onClick={()=> setAddMode((prev)=>!prev)}/>
       </div>
       {chats.map((chat) => (
-        <div className={styles.item} key={chat.chatId} onClick={ ()=> handleSelect(chat)}>
+        <div className={styles.item} key={chat.chatId} onClick={ ()=>handleSelect(chat)}>
         <img src={chat.user.avatar || "./avatar.png"} alt="" />
         <div className={styles.texts}>
           <span>{chat.user.username}</span>
