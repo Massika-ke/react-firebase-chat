@@ -55,7 +55,12 @@ const ChatList = () => {
         onClick={()=> setAddMode((prev)=>!prev)}/>
       </div>
       {chats.map((chat) => (
-        <div className={styles.item} key={chat.chatId} onClick={ ()=>handleSelect(chat)}>
+        <div className={styles.item} 
+        key={chat.chatId} 
+        onClick={ ()=>handleSelect(chat)}
+        style={{
+          backgroundColor: chat?.isSeen ? "transparent" : "#5183fe",
+        }}>
         <img src={chat.user.avatar || "./avatar.png"} alt="" />
         <div className={styles.texts}>
           <span>{chat.user.username}</span>
