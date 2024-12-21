@@ -1,12 +1,16 @@
-import React from 'react'
+import { useUserStore } from '../../../lib/userStore';
+
+
 import styles from './userInfo.module.css'
 
-const userInfo = () => {
+const UserInfo = () => {
+  const { currentUser } = useUserStore();
+
   return (
     <div className={styles.userInfo}>
         <div className={styles.user}>
-            <img src="./avatar.png" alt="" />
-            <h2>Massika Joe</h2>
+            <img src={ currentUser.avatar || "./avatar.png"} alt="" />
+            <h2>{currentUser.username}</h2>
         </div>
         <div className={styles.icons}>
             <img src="./more.png" alt="" />
@@ -17,4 +21,4 @@ const userInfo = () => {
   )
 }
 
-export default userInfo;
+export default UserInfo;
