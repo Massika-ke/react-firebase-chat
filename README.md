@@ -1,1 +1,1 @@
-React chat app updated version
+Web-Based, Realtime React chat application
